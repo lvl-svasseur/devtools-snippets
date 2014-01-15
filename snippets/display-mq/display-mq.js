@@ -31,22 +31,15 @@
 
     var css = document.createTextNode(''+
         '#display-media-query {'+
-        ' position: absolute;'+
-        ' bottom: 0px;'+
-        ' right:0px;'+
-        ' z-index: 999;'+
-        ' display: block;'+
-        ' width: auto;'+
-        ' height: auto;'+
+        ' z-index:999; position:absolute; display:block;'+
+        ' bottom:0px; right:0px;'+
+        ' width:auto; height:auto;'+
         '}'+
         '#display-media-query::after{'+
-        ' color: white; font: 15px arial;'+
-        ' display: block;'+
+        ' position:relative; display:block; top:0px; left:0px;'+
         ' padding: 7px 10px;'+
-        ' position: relative;'+
-        ' top: 0px ;'+
-        ' left: 0px;'+
         ' border-radius: 10px 0 0 0; border: #333 1px solid; border-width: 1px 0 0 1px;'+
+        ' color: white; font: 15px arial;'+
         '}');
 
     var style = document.createElement("style");
@@ -76,7 +69,6 @@
     // write dmq pane <div>
     var dmqDiv = document.createElement("div");
     dmqDiv.innerHTML = "&nbsp;";
-    console.log(dmqDiv);
     dmqDiv.setAttribute("id", divId);
     dmqDiv.setAttribute("data-height", (document.documentElement.clientHeight||window.innerHeight));
     dmqDiv.setAttribute("data-width", (document.documentElement.clientWidth||window.innerWidth));
